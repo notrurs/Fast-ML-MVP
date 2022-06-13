@@ -1,24 +1,20 @@
-{% extends 'demo/base.html' %}
+{% extends 'demo/application.html' %}
 {% load static %}
 
 {% block title %} Ajax Draw {% endblock title %}
 
-{% block main %}
-    <section class="d-flex justify-content-center align-items-center">
-        <div class="w-75 d-flex justify-content-evenly align-items-center">
-            <div class="d-flex flex-column align-items-center justify-content-evenly" style="height: 467px;">
-                <div class="w-100 d-flex text-center justify-content-evenly">
-                    <button class="btn btn-primary btn-lg" type="button" id="uploadButton">Upload</button>
-                    <button class="btn btn-secondary btn-lg" type="button" id="clearButton">Clear</button>
-                </div>
-                {% csrf_token %}
-                <canvas id="myCanvas" width="280" height="280" style="background-color: black;">
-                    Ваш браузер не поддерживает Canvas
-                </canvas>
-            </div>
-            {% include 'demo/predict_table.html' %}
-        </div>
-    </section>
+{% block application_body %}
+    <div class="w-100 d-flex text-center justify-content-evenly">
+        <button class="btn btn-primary btn-lg" type="button" id="uploadButton">Upload</button>
+        <button class="btn btn-secondary btn-lg" type="button" id="clearButton">Clear</button>
+    </div>
+    {% csrf_token %}
+    <canvas id="myCanvas" width="280" height="280" style="background-color: black;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+{% endblock application_body %}
+
+{% block application_js %}
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="{% static 'demo/js/drawing_field.js' %}"></script>
-{% endblock main %}
+{% endblock application_js %}
