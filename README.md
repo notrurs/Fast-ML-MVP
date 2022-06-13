@@ -16,6 +16,9 @@ Step 2. Install requirements
 pip install -r reqirements.txt
 ```
 
+Attention! PyTorch can cause errors while installing. 
+See PyTorch [installation guide](https://pytorch.org/get-started/locally/).
+
 ### Running
 
 Step 3. Go to `src`
