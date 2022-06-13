@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center align-items-center">
+    {% if prediction %}
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Probability</th>
+            </tr>
+            </thead>
+            <tbody id="predictionTable">
+            {% for number, prob in prediction.items %}
+                {% if number == predicted_num %}
+                <tr class="text-center text-primary fw-bold">
+                {% else %}
+                <tr class="text-center">
+                {% endif %}
+                    <th scope="row">{{ number }}</th>
+                    <td>{{ prob|floatformat:3 }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
