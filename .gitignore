@@ -1,1 +1,4 @@
 .idea/
+
+demo/services/data/
+demo/services/mnist_nn.ipynb
