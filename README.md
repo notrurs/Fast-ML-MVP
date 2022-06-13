@@ -1,5 +1,7 @@
 # Fast ML MVP
 
+![preview image](_static/django_mnist_ajax.gif)
+
 ## Getting Started
 
 ### Installing
