@@ -26,11 +26,16 @@ Step 3. Go to `src`
 cd src
 ```
 
-Step 4. Run django server
+Step 4. Apply migrations
+```
+python manage.py migrate
+```
+
+Step 5. Run django server
 ```
 python manage.py runserver
 ```
 
 ### Usage
 
-Step 5. Open `127.0.0.1:8000` in your browser
+Step 6. Open `127.0.0.1:8000` in your browser
