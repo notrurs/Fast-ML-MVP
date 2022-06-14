@@ -3,3 +3,5 @@ venv/
 
 src/demo/services/data/
 src/demo/services/mnist_nn.ipynb
+
+src/db.sqlite3
