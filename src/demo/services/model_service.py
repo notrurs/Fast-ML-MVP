@@ -32,7 +32,6 @@ class ModelService:
 
         if image.size != (28, 28):  # resizing
             image = image.resize((28, 28))
-            image.save('image_thumb.jpg', 'jpeg')
 
         transform = ToTensor()
         image = transform(image)  # tensor transform
