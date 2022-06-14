@@ -52,10 +52,8 @@ class AjaxDraw(TemplateView):
         return context
 
     def post(self, request, *args, **kwargs):
-        with open('image.jpg', 'wb') as f:
-            f.write(b64decode(json.loads(request.body.decode())['image']))
-        image = BytesIO(b64decode(json.loads(request.body.decode())['image']))
-        prediction = model.predict(image)
+        image = json.loads(request.body.decode())['image']
+        prediction = model.predict(BytesIO(b64decode(image)))
         response = {
             'data': {
                 'prediction': prediction,
