@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'demo'
+    'demo',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mnist_demo.wsgi.application'
+ASGI_APPLICATION = 'mnist_demo.asgi.application'
 
 
 # Database
