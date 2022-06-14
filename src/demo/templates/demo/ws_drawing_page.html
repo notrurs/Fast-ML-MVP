@@ -1,6 +1,17 @@
 {% extends 'demo/ajax_drawing_page.html' %}
 {% load static %}
 
+{% block application_body %}
+    <div class="w-100 d-flex text-center justify-content-evenly">
+        <button class="btn btn-secondary btn-lg" type="button" id="clearButton">Clear</button>
+    </div>
+    {% csrf_token %}
+    <canvas id="myCanvas" width="280" height="280" style="background-color: black;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+{% endblock application_body %}
+
 {% block application_js %}
-        <script src="{% static 'demo/js/drawing_field_ws.js' %}"></script>
+    <script src="{% static 'demo/js/drawing_field.js' %}"></script>
+    <script src="{% static 'demo/js/drawing_field_ws.js' %}"></script>
 {% endblock application_js %}
