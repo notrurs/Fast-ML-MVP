@@ -1,4 +1,4 @@
-{% extends 'demo/base.html' %}
+{% extends 'mnist_demo/base.html' %}
 
 {% block main %}
     <section class="d-flex justify-content-center align-items-center">
@@ -6,7 +6,7 @@
             <div class="d-flex flex-column align-items-center justify-content-evenly" style="height: 467px;">
                 {% block application_body %}{% endblock application_body %}
             </div>
-            {% include 'demo/predict_table.html' %}
+            {% include 'mnist_demo/predict_table.html' %}
         </div>
     </section>
     {% block application_js %}{% endblock application_js %}

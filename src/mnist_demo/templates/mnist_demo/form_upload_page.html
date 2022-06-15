@@ -1,4 +1,4 @@
-{% extends 'demo/application.html' %}
+{% extends 'mnist_demo/application.html' %}
 {% load static %}
 
 {% block title %} Form Upload {% endblock title %}
@@ -16,6 +16,6 @@
     {% if image %}
         <img src="{{ image }}" alt="uploaded_image" width="280px">
     {% else %}
-        <img src="{% static 'demo/img/cat_thumbnail.png' %}" alt="uploaded_image" width="280px">
+        <img src="{% static 'mnist_demo/img/cat_thumbnail.png' %}" alt="uploaded_image" width="280px">
     {% endif %}
 {% endblock application_body %}

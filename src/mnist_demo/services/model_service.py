@@ -15,7 +15,7 @@ class ModelService:
     @staticmethod
     def _load_model() -> torch.nn.Module:
         model = CNN()
-        model.load_state_dict(torch.load('demo/services/model.tch'))
+        model.load_state_dict(torch.load('mnist_demo/services/model.tch'))
         return model
 
     def predict(self, image: BytesIO) -> dict[int, float]:

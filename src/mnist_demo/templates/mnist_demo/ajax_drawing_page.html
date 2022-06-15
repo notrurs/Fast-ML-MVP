@@ -1,4 +1,4 @@
-{% extends 'demo/application.html' %}
+{% extends 'mnist_demo/application.html' %}
 {% load static %}
 
 {% block title %} Ajax Draw {% endblock title %}
@@ -16,6 +16,6 @@
 
 {% block application_js %}
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-    <script src="{% static 'demo/js/drawing_field.js' %}"></script>
-    <script src="{% static 'demo/js/drawing_field_ajax.js' %}"></script>
+    <script src="{% static 'mnist_demo/js/drawing_field.js' %}"></script>
+    <script src="{% static 'mnist_demo/js/drawing_field_ajax.js' %}"></script>
 {% endblock application_js %}

@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from .views import IndexPage, FormUpload, AjaxDraw, WsDraw
 
 
-app_name = 'demo'
+app_name = 'mnist_demo'
 
 urlpatterns = [
     path('', IndexPage.as_view(), name='index'),

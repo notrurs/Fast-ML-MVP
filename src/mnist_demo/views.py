@@ -11,11 +11,11 @@ from .services import model
 
 
 class IndexPage(TemplateView):
-    template_name = 'demo/index.html'
+    template_name = 'mnist_demo/index.html'
 
 
 class FormUpload(FormView):
-    template_name = 'demo/form_upload_page.html'
+    template_name = 'mnist_demo/form_upload_page.html'
     form_class = UploadImageForm
 
     def form_valid(self, form):
@@ -35,7 +35,7 @@ class FormUpload(FormView):
 
             return render(self.request, FormUpload.template_name, context)
         else:
-            return redirect('demo:form_upload')
+            return redirect('mnist_demo:form_upload')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
@@ -44,7 +44,7 @@ class FormUpload(FormView):
 
 
 class AjaxDraw(TemplateView):
-    template_name = 'demo/ajax_drawing_page.html'
+    template_name = 'mnist_demo/ajax_drawing_page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
@@ -64,7 +64,7 @@ class AjaxDraw(TemplateView):
 
 
 class WsDraw(TemplateView):
-    template_name = 'demo/ws_drawing_page.html'
+    template_name = 'mnist_demo/ws_drawing_page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
