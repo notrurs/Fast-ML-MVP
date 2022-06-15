@@ -7,6 +7,7 @@ from django.views.generic import TemplateView, FormView
 from django.http import JsonResponse
 
 from .forms import UploadImageForm
+from .mixins import UserContextMixin
 from .services import model
 
 
@@ -14,7 +15,7 @@ class IndexPage(TemplateView):
     template_name = 'mnist_demo/index.html'
 
 
-class FormUpload(FormView):
+class FormUpload(UserContextMixin, FormView):
     template_name = 'mnist_demo/form_upload_page.html'
     form_class = UploadImageForm
 
@@ -37,19 +38,9 @@ class FormUpload(FormView):
         else:
             return redirect('mnist_demo:form_upload')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        context['prediction'] = {key: 'nan' for key in range(10)}
-        return context
 
-
-class AjaxDraw(TemplateView):
+class AjaxDraw(UserContextMixin, TemplateView):
     template_name = 'mnist_demo/ajax_drawing_page.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        context['prediction'] = {key: 'nan' for key in range(10)}
-        return context
 
     def post(self, request, *args, **kwargs):
         image = json.loads(request.body.decode())['image']
@@ -63,10 +54,5 @@ class AjaxDraw(TemplateView):
         return JsonResponse(response)
 
 
-class WsDraw(TemplateView):
+class WsDraw(UserContextMixin, TemplateView):
     template_name = 'mnist_demo/ws_drawing_page.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        context['prediction'] = {key: 'nan' for key in range(10)}
-        return context
