@@ -1,0 +1,12 @@
+.git/
+.idea/
+
+_static/
+venv/
+
+src/static
+src/mnist_demo/services/data/
+src/mnist_demo/services/mnist_nn.ipynb
+
+.gitignore
+README.md
