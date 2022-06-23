@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - ./src/:/app/src
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build:
+      context: ./docker/nginx
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/static/:/static
