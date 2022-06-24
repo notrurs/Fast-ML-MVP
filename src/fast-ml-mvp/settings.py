@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = getenv('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv('DJANGO_DEBUG')
+DEBUG = True if getenv('DJANGO_DEBUG') in ['True', 'true', 1, '1'] else False
 
 ALLOWED_HOSTS = [
     'app'
