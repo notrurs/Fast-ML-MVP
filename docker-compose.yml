@@ -7,6 +7,10 @@ services:
       - ./src/:/app/src
     ports:
       - "8000:8000"
+    environment:
+      - DJANGO_ALLOWED_HOST=${DJANGO_ALLOWED_HOST}
+      - DJANGO_DEBUG=${DJANGO_DEBUG}
+      - DJANGO_SECRET=${DJANGO_SECRET}
 
   nginx:
     build:
