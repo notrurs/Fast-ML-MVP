@@ -61,9 +61,9 @@ python manage.py runserver
 **Step 3.** Change these params in `.env`
 
 ```
-DJANGO_CSRF_TRUSTED_HOST="%enter_your_host%"
-DJANGO_DEBUG = "True" or "False", what you need
-DJANGO_SECRET="%enter_your_secret_key%"
+DJANGO_CSRF_TRUSTED_HOST=%enter_your_host%
+DJANGO_DEBUG = True or False, what you need
+DJANGO_SECRET=%enter_your_secret_key%
 ```
 
 **Step 4.** Up containers
