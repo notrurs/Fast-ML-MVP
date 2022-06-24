@@ -20,7 +20,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    f'http://{getenv("DJANGO_ALLOWED_HOST")}'
+    f'http://{getenv("DJANGO_CSRF_TRUSTED_HOST")}'
 ]
 
 # Application definition
