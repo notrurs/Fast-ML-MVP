@@ -1,5 +1,5 @@
 // WebSocket init
-let url = 'ws://' + window.location.host + '/ws_draw/';
+const url =  `ws://${window.location.host}${window.location.pathname}`;
 const appSocket = new WebSocket(url);
 
 // What to do when websocket gets message from server

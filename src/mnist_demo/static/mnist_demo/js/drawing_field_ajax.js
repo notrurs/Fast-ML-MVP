@@ -4,7 +4,7 @@ let uploadButton = document.getElementById("uploadButton");
 uploadButton.addEventListener("mouseup", function (e) {
     let json_image = getJsonImage()
 
-    fetch("/ajax_draw/", {
+    fetch(`${window.location.pathname}`, {
         method: 'post',
         body: json_image,
         headers: {
