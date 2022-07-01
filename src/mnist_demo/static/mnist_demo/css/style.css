@@ -3,3 +3,17 @@ BODY{
     display: flex;
     flex-direction: column;
 }
+
+.svg-ico{
+    margin-bottom: .25rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.svg-middle{
+    width: 36px;
+    height: 36px;
+}
