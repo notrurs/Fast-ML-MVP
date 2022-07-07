@@ -17,3 +17,8 @@ BODY{
     width: 36px;
     height: 36px;
 }
+
+.svg-large{
+    font-size: 8rem;
+    color: black;
+}
