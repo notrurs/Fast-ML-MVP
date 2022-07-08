@@ -1,27 +1,21 @@
-FROM python:3.10-slim as builder
+FROM python:3.10-slim AS builder
 
-WORKDIR app
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc
+ENV VIRTUAL_ENV=/opt/venv
+RUN python -m venv ${VIRTUAL_ENV}
 
 COPY requirements.txt .
-RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
+RUN ${VIRTUAL_ENV}/bin/pip install --no-cache-dir -r requirements.txt
 
-FROM python:3.10-slim
+FROM python:3.10-slim AS release
+
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
+
+COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 
 WORKDIR app
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-COPY --from=builder /app/wheels /wheels
 COPY docker/app/entrypoint.sh .
-
-RUN pip install --no-cache /wheels/* &&  \
-    chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh"]
