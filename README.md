@@ -66,6 +66,20 @@ DJANGO_DEBUG = True or False, what you need
 DJANGO_SECRET=%enter_your_secret_key%
 ```
 
+**Step 3.5 (optional).** Choose app Dockerfile
+
+Application has two dockerfiles in `docker/app`: multistage and simplified. 
+By default, multistage is choosed, but if you want to change this, you have to edit `docker-compose.yml`:
+
+```
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile_simple # <-- Add _simple postfix
+  ...
+```
+
 **Step 4.** Up containers
 ```
 docker-compose up -d
