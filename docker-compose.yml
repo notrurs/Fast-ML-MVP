@@ -22,4 +22,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src/static/:/static
+      - ./src/static/:/home/static
