@@ -1,6 +1,6 @@
 # Fast ML MVP
 
-![preview image](_static/django_mnist_ajax.gif)
+![preview image](_static/websocket_demo.gif)
 
 ## Getting Started
 
