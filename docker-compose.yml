@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_CSRF_TRUSTED_HOST=${DJANGO_CSRF_TRUSTED_HOST}
+      - DJANGO_HOST=${DJANGO_HOST}
       - DJANGO_DEBUG=${DJANGO_DEBUG}
       - DJANGO_SECRET=${DJANGO_SECRET}
 
