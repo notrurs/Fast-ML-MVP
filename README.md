@@ -85,4 +85,4 @@ services:
 docker-compose up -d
 ```
 
-**Step 5.** Open ip or domain name which in `DJANGO_CSRF_TRUSTED_HOST` in your browser
+**Step 5.** Open ip or domain name which in `DJANGO_HOST` in your browser
